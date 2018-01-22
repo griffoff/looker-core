@@ -1,4 +1,3 @@
-connection: "snowflake_dev"
 fiscal_month_offset: 3
 
 named_value_format: duration_hms {
