@@ -1,5 +1,5 @@
 # definition of fivetran audit table
-# with addition metrics
+# with additional [optional] metrics
 view: fivetran_audit_base {
   label: "FiveTran Sync Audit"
 #  sql_table_name: MT_NB.FIVETRAN_AUDIT ;;
@@ -31,12 +31,12 @@ view: fivetran_audit_base {
 #       ;;
 #   }
 #
+
   set: table_sync_details {
     fields: [schema, table, start_time, done_time, duration_days, message, status, rows_updated_or_inserted, update_recency]
   }
 
-
-# additional fields that are not in the raw fivetran audit table, see above for calculations
+### additional fields that are not in the raw fivetran audit table, see above for calculations
   dimension: update_start_time {
     type: date_time
     hidden: yes
@@ -44,7 +44,7 @@ view: fivetran_audit_base {
 
   dimension: update_finish_time {
     type: date_time
-    hidden: no
+    hidden: yes
   }
 
   dimension: update_no  {
@@ -57,8 +57,25 @@ view: fivetran_audit_base {
     type:  yesno
     sql: ${update_no} = 1 ;;
     hidden: yes
-
   }
+
+  dimension: time_elapsed {
+    label: "Time Taken for this batch"
+    type: number
+    sql: datediff(second, ${update_start_time}, ${update_finish_time})/60/60/24 ;;
+    value_format_name: duration_hms
+    hidden: yes
+  }
+
+  measure: time_elapsed_sum {
+    label: "Cumulative Time Taken"
+    type: sum
+    sql: ${time_elapsed} ;;
+    value_format_name: duration_hms
+    hidden: yes
+  }
+
+### End of additional fields
 
   dimension: id {
     primary_key: yes
@@ -76,6 +93,7 @@ view: fivetran_audit_base {
     type: time
     timeframes: [raw, date, hour, hour_of_day, day_of_week, time_of_day, minute, month_name, time]
     sql: convert_timezone('EST', ${TABLE}.PROGRESS) ;;
+    hidden: yes
   }
 
   dimension: schema {
@@ -129,20 +147,6 @@ view: fivetran_audit_base {
     label: "Total Time"
     type: sum
     sql: ${duration_days} ;;
-    value_format_name: duration_hms
-  }
-
-  dimension: time_elapsed {
-    label: "Time Taken for this batch"
-    type: number
-    sql: datediff(second, ${update_start_time}, ${update_finish_time})/60/60/24 ;;
-    value_format_name: duration_hms
-  }
-
-  measure: time_elapsed_sum {
-    label: "Cumulative Time Taken"
-    type: sum
-    sql: ${time_elapsed} ;;
     value_format_name: duration_hms
   }
 
