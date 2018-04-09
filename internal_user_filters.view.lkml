@@ -62,6 +62,14 @@ view: internal_user_email_filters {
           ,('i19_instructor_091014@gmail.com')
           ;;
     }
+
+    dimension: like_filter {
+      hidden: yes
+    }
+
+    dimension: is_internal {
+      sql: ${like_filter} is not null ;;
+    }
   }
 
 
@@ -90,5 +98,13 @@ view: internal_org_filters {
         ,('23876799')
         ,('4303')
         ;;
+  }
+
+  dimension: org_external_id {
+    hidden: yes
+  }
+
+  dimension: is_internal {
+    sql: ${org_external_id} is not null ;;
   }
 }
