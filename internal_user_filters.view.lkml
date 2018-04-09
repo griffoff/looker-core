@@ -9,11 +9,10 @@ view: internal_user_email_filters {
           ,( '%@thomsonlearning.com')
           ,( '%aplia.com')
           ,( '%@acms.com')
-          ,( '%@qai.com')
-          ,( '%@qait.com')
-          ,( '%@qait.net')
-          ,( '%@qaittest.com')
-          ,( '%@qainfotech.net')
+          ,( '%@qai.%')
+          ,( '%@qait.%')
+          ,( '%@qaittest.%')
+          ,( '%@qainfotech.%')
           ,( '%hmhpub.com')
           ,( '%@clmstest.com')
           ,( '%@test.com')
@@ -48,19 +47,20 @@ view: internal_user_email_filters {
           ,('%testaccount.com')
           ,('%development.%')
           ,('%cengage1.com')
-          ,('%qaitest.com'
-          ,('%@mtx.com'
-          ,('%@mtxqa.com'
-          ,('%@henley.com'
-          ,('%@cengagetest.com'
-          ,('%@ng.com'
-          ,('%@qa4u.com'
+          ,('%qaitest.com')
+          ,('%@mtx.com')
+          ,('%@mtxqa.com')
+          ,('%@henley.com')
+          ,('%@cengagetest.com')
+          ,('%@ng.com')
+          ,('%@qa4u.com')
           ,('inst1_gateway_130514@yahoo.com')
           ,('01_gtwy_instructor_30042015@gmail.com')
           ,('i1_instructor_16052014@gmail.com')
           ,('i9_instructor_040814@gmail.com')
           ,('i19_instructor_091014@gmail.com')
           ;;
+      persist_for: "24 hours"
     }
 
     dimension: like_filter {
@@ -97,7 +97,14 @@ view: internal_org_filters {
         ,('1-XJH2WF')
         ,('23876799')
         ,('4303')
+        ,('demo_english')
+        ,('218230')
+        ,('27523686')
+        ,('120485')
+        ,('144768')
+        ,('test123')
         ;;
+    persist_for: "24 hours"
   }
 
   dimension: org_external_id {
