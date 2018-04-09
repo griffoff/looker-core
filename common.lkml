@@ -16,3 +16,7 @@ named_value_format: duration_hms_full {
 named_value_format: currency {
   value_format: "$#,##0.00"
 }
+
+named_value_format: TB_1{
+  value_format: "#,##0.0 \T\B"
+}
