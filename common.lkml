@@ -5,6 +5,10 @@ named_value_format: duration_hms {
   value_format: "hh:mm:ss"
 }
 
+named_value_format: duration_mdh {
+  value_format: "M \m\o\n\t\h\s d \d\a\y\s h \h\o\u\r\s"
+}
+
 named_value_format: duration_dhm {
   value_format: "d \d\a\y\s hh:mm"
 }
