@@ -166,6 +166,19 @@ view: fivetran_audit_base {
     hidden: yes
   }
 
+  measure: update_recency_bucket {
+    type: number
+    sql: case
+        when ${update_recency} <= 1 then 1
+        when ${update_recency} <= 3 then 3
+        when ${update_recency} <= 7 then 7
+        when ${update_recency} <= 14 then 14
+        when ${update_recency} <= 28 then 28
+        else -1
+        end ;;
+    value_format: "d \d\a\y\s;\o\l\d\e\r \t\h\a\n 28 \d\a\y\s"
+  }
+
   measure: update_recency {
     type: number
     sql:  timediff(minute, ${latest_update_time}, current_timestamp) / 60 / 24 ;;
