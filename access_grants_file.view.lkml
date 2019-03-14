@@ -12,3 +12,8 @@ access_grant: can_view_segment_parameters {
   user_attribute: access_segment_creation
   allowed_values: ["yes"]
 }
+
+access_grant: can_view_cube_dev{
+  user_attribute: access_cube_dev
+  allowed_values: ["yes"]
+}
