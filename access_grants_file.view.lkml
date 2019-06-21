@@ -14,6 +14,6 @@ access_grant: can_view_segment_parameters {
 }
 
 access_grant: can_view_cube_dev{
-  user_attribute: access_cube_dev
+  user_attribute: access_dev_data
   allowed_values: ["yes"]
 }
