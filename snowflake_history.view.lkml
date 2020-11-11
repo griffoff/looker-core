@@ -28,8 +28,9 @@ view: snowflake_history {
   dimension: total_elapsed_time {
     type: number
     sql: total_elapsed_time / 60 / 60 / 24 ;;
-    value_format_name: duration_hms
+    value_format: "[m] \m\i\n\s"
   }
+
   dimension: query_text {}
 
   measure: count {

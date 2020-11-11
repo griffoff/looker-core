@@ -2,7 +2,7 @@ fiscal_month_offset: 3
 week_start_day: monday
 
 named_value_format: duration_hms {
-  value_format: "hh:mm:ss"
+  value_format: "[h]:mm:ss"
 }
 
 named_value_format: duration_mdh {
