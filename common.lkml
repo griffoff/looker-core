@@ -18,7 +18,7 @@ named_value_format: duration_dhm {
 }
 
 named_value_format: duration_hms_full {
-  value_format: "h \h\r\s m \m\i\n\s s \s\e\c\s"
+  value_format: "[h] \h\r\s m \m\i\n\s s \s\e\c\s"
 }
 
 named_value_format: currency {

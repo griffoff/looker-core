@@ -1,4 +1,4 @@
-include: "common.lkml"
+include: "/core/common.lkml"
 # definition of fivetran audit table
 # with additional [optional] metrics
 view: fivetran_audit_base {
