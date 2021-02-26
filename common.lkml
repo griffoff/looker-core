@@ -6,7 +6,11 @@ named_value_format: duration_hms {
 }
 
 named_value_format: duration_minutes {
-  value_format: "[m] \m\i\n\s"
+  value_format: "[m]:ss \m\i\n\s"
+}
+
+named_value_format: duration_days {
+  value_format: "d \d\a\y\s h \h\r\s m \m\i\n\s s \s\e\c\s"
 }
 
 named_value_format: duration_mdh {
