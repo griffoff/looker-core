@@ -1,10 +1,10 @@
-# datagroup: daily_refresh {
-#   sql_trigger: SELECT CURRENT_DATE() ;;
-# }
+datagroup: daily_refresh {
+  sql_trigger: SELECT CURRENT_DATE() ;;
+}
 
-# datagroup: do_not_update {
-#   sql_trigger: SELECT 1 ;;
-# }
+datagroup: do_not_update {
+  sql_trigger: SELECT 1 ;;
+}
 
 datagroup: sunday_refresh {
   #2021-03-21 was a sunday
