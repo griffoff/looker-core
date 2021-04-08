@@ -12,8 +12,39 @@
 #   }
 # }
 
+named_value_format: seconds_0 {
+  value_format: "#,##0 \s\e\c\s"
+}
+
+named_value_format: seconds_1 {
+  value_format: "#,##0.0 \s\e\c\s"
+}
+
+named_value_format: minutes_0 {
+  value_format: "#,##0 \m\i\n\s"
+}
+
+named_value_format: minutes_1 {
+  value_format: "#,##0.0 \m\i\n\s"
+}
+
+named_value_format: hours_0 {
+  value_format: "#,##0 \h\r\s"
+}
+
+named_value_format: hours_1 {
+  value_format: "#,##0.0 \h\r\s"
+}
+
+#################################################################################################################
+#
+# ALL DURATION_* FORMATS WORK WITH MEASURES THAT ARE TIME/DURATION REPRESENTATIONS OF A PORTION OF A DAY
+#
+#################################################################################################################
+
 
 # these two formats are creating validation issues - with look support
+# this is due to a bug with the fast formatter, will be fixed in future versions
 named_value_format: duration_mdh {
   #value_format: "M m\o\n\t\h\s d \da\y\s h \h\ou\r\s"
   value_format: "M:dd:hh"
