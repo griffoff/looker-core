@@ -14,7 +14,7 @@ named_value_format: duration_mdh {
 
 named_value_format: duration_dhm {
 #  value_format: "d \d\a\y\s hh:mm"
-value_format: "d \d\a\y\s hh:mm:ss"
+  value_format: "d \d\a\y\s hh:mm:ss"
 }
 ################################
 
@@ -23,7 +23,7 @@ named_value_format: duration_hms {
 }
 
 named_value_format: duration_minutes {
-  value_format: "[m]:ss \mi\n\s"
+  value_format: "[m]:ss \m\i\n\s"
 }
 
 named_value_format: duration_days {
@@ -36,5 +36,5 @@ named_value_format: duration_ymd {
 }
 
 named_value_format: duration_hms_full {
-  value_format: "[h] \h\r\s m \mi\n\s s \s\e\c\s"
+  value_format: "[h] \h\r\s m \m\i\n\s s \s\e\c\s"
 }

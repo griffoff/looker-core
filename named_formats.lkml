@@ -1,4 +1,6 @@
-include: "named_formats.*.lkml"
+include: "named_formats.duration.lkml"
+include: "named_formats.time_span.lkml"
+include: "named_formats.data_volume.lkml"
 
 # explore: date_test {}
 # view: date_test {
