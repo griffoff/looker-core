@@ -17,7 +17,7 @@ datagroup: do_not_update {
 
 datagroup: sunday_refresh {
   #2021-03-21 was a sunday
-  sql_trigger: FLOOR(DATEDIFF(DAY, '2021-03-21', CURRENT_DATE())/7)  ;;
+  sql_trigger: SELECT FLOOR(DATEDIFF(DAY, '2021-03-21', CURRENT_DATE())/7)  ;;
 }
 
 datagroup: schedule_bi_weekly_monday_0600 {
